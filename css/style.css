@@ -1,0 +1,114 @@
+body{
+	overflow-x:hidden;
+}
+
+.chartCols{
+	height:100%;
+	position:relative;
+	width:100%;
+}
+
+#Sec0 {
+    padding-top: 120px;
+    text-align: left;
+	background: url("../img/background.jpg") no-repeat top center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	overflow:hidden;
+}
+
+#Sec0 p{
+	background-color:#000;
+	display: inline;
+	white-space: nowrap;
+}
+
+#Sec1 {
+    height: 100%;
+    padding-top: 60px;
+    text-align: center;
+    background: #eee;
+}
+
+#Sec2 {
+    height: 100%;
+    padding-top: 60px;
+    text-align: center;
+    background: #333;
+}
+
+#Sec3 {
+    height: 100%;
+    padding-top: 60px;
+    text-align: center;
+    background: #eee;
+}
+
+#Sec3 .container{
+	text-align:left;
+	background: #eee;
+	font-size: 10px;
+}
+
+#homeIcon{
+	line-height:2.2;
+	font-size:24px;
+}
+
+#highchartsTitle{
+	color: #333333;
+	font-size: 18px;
+}
+
+#highchartsSubTitle{
+	color: #555555;
+	font-size: 12px;
+}
+
+.Sec0-Title{
+	font-size: 40px;
+	color:#fff;
+	padding-top:110px;
+}
+
+.Sec0-Bio{
+	font-size: 24px;
+	padding-top:40px;
+}
+
+@media screen and (max-height: 465px) {
+	.Sec0-Title{
+		font-size: 28px;
+		padding-top:70px;
+	}
+	.Sec0-Bio{
+		font-size: 16px;
+		padding-top:10px;
+	}
+}
+
+
+.yellowTitle{
+	color:#acb700;
+}
+
+.mainFont{
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+}
+
+a{
+	color:#acb700;
+	text-decoration:none;
+}
+
+a:hover{
+	color:#acb700;
+	text-decoration:none;
+}
+
+a:focus {
+	color:#acb700;
+	text-decoration:none;
+}
