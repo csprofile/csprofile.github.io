@@ -56,5 +56,5 @@ strings['en-EN'] = {
 	,winMessage:"You finished the game! please, share your feedback to wd.cristian@gmail.com"
 }
 
-var culture = 'en-EN'
+var culture = (navigator.language || navigator.userLanguage) == 'pt-BR' ? 'pt-BR' : 'en-EN' ;
 globals.culture = strings[culture];
