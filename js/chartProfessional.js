@@ -61,7 +61,7 @@ function drawChart1(){
 				'Java',
 				'PHP',
 				'JS',
-				'JQuery',
+				'AngularJS',
 				'CSS3',
 				'HTML5',
 				'C',
