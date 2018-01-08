@@ -9,10 +9,10 @@
 $(window).on('load', function(){
 	var width = $(window).width();
 	var height = $(window).height();
-	if((width < 1024 || height < 700)){
+	/*if((width < 1024 || height < 700)){
 		$(".wrongSize").css("display","block");
 		$("#container").css("display","none");
-	}
+	}*/
 });
 
 $(document).ready(function(){
