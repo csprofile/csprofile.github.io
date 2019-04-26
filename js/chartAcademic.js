@@ -249,6 +249,9 @@ function drawChart2(){
 				,'Technologist Degree'
 				,'First multinational project'
 				,'Coach training'
+				,'Practical Hypnosis Training'
+				,'Moved to Canada'
+				,'Learning how to Learn - McMaster University'
 			],
 			title: {text: ''}
 		},
@@ -277,6 +280,9 @@ function drawChart2(){
 				,{x:27, y:20}
 				,{x:28, y:21}
 				,{x:29, y:22}
+				,{x:31, y:23}
+				,{x:31, y:24}
+				,{x:32, y:25}
 			]
 		}]	
 	});

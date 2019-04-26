@@ -1,0 +1,43 @@
+#keyboard {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#keyboard li {
+    float: left;
+    margin: 0 0.4% 0.4% 0;
+    width: 7.2%;
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+
+#keyboard .firstitem{
+	clear: left;
+}
+#keyboard .lastitem {
+	margin-right: 0;
+}
+#keyboard .tab, #keyboard .delete {
+	width: 11.6%;
+}
+#keyboard .numeric{
+	width: 9.6%;
+}
+#keyboard .capslock, #keyboard .left-shift{
+	width: 16%;
+}
+#keyboard .space {
+	width: 58.8%;
+}
+#keyboard .next, #keyboard .before{
+	width: 20%;
+}
+#keyboard .uppercase {
+	text-transform: uppercase;
+}
+#keyboard .on {
+	display: none;
+}

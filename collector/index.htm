@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8"/>
+
+		<title>QC - DEV</title>
+
+		<link rel="stylesheet" href="css/jquery-ui.css"/>
+		<link rel="stylesheet" href="css/imersive.css"/>
+		<link rel="stylesheet" href="css/reset.css"/>
+		<link rel="stylesheet" href="css/mainStyle.css"/>
+		<link rel="stylesheet" href="css/keyboard.css"/>
+
+		<script type="text/javascript" src="js/jquery/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery/jquery-ui.js"></script>
+		
+		<script type="text/javascript" src="js/JQuery.Imersive.js"></script>
+		<script type="text/javascript" src="js/JQuery.keyboard.js"></script>
+
+		<script>
+		$(document).ready(function() {
+			var imersiveLayout = $('#buttons').imersive();
+			
+			imersiveLayout.createButton({
+				gradient:"green", 
+				title:"Produção",
+				closeWidth:40
+			});
+			
+			imersiveLayout.createButton({
+				gradient:"gray", 
+				title:"Apontamentos de CEP",
+				startMaximized:true,
+				closeWidth:30,
+				last:true,
+				onMaximize:function(area,button){
+					var outputData = new Array();
+					outputData.push({buttonName:"CEP"});
+					outputData.push({buttonNumber:2});
+					
+					var inputData = new Array();
+					inputData.push({label:'CÓDIGO DA PEÇA', out:'CODE'});
+					inputData.push({label:'VALOR DO EIXO X', out:'X'});
+					inputData.push({label:'VALOR DO EIXO Y', out:'Y'});
+					inputData.push({label:'VALOR DO EIXO Z', out:'Z'});
+					
+					var ClickCnt = 0;
+					
+					area.hide();
+					var divKeyboard = $("<div>");
+					var dataTitle = $("<div>");
+					var dataInput = $("<div>");
+					
+					//TITLE
+					dataTitle.append("<P style='display: table-cell;  vertical-align: middle;'>"+inputData[ClickCnt].label+"</P>");
+					dataTitle.css({
+						"width":area.width(),
+						"height":area.height() * 0.2,
+						"font-size":"30px",
+						"display":"table",
+						"text-align":"left",
+						"padding-left":"10px"
+					});
+					
+					//INPUT
+					dataInput.css({
+						"width":area.width() - 45,
+						"height":area.height() * 0.3,
+						"background":"#eee",
+						"padding-left":"40px",
+						"border":"2px solid #333",
+						"text-align":"left",
+						"font-size":"30px",
+						"line-height":(area.height() * 0.3) + "px"
+					});
+					
+					//KEYBOARD
+					divKeyboard.css({
+						"width":area.width(),
+						"height":area.height() * 0.5
+					});
+					
+					var kb = $(divKeyboard).keyboard({
+						writeIn:dataInput, 
+						width: divKeyboard.width(),
+						height: divKeyboard.height(),
+						nextAction:function(keyboard){
+							
+							
+							dataTitle.fadeOut('fast',function(){
+								var key = inputData[ClickCnt].out;
+								var dataObj = {};
+								dataObj[key] = dataInput.html();
+								outputData.push(dataObj);
+
+								if(ClickCnt == inputData.length -1){
+									console.log(JSON.stringify(outputData));
+									outputData = new Array();
+									outputData.push({buttonName:"CEP"});
+									outputData.push({buttonNumber:2});
+									
+									ClickCnt = 0;
+									button.trigger('close');
+								}else{
+									ClickCnt++;
+									$(this).empty();
+									dataInput.html("");
+									$(this).append("<P style='display: table-cell;  vertical-align: middle;'>"+inputData[ClickCnt].label+"</P>");
+									$(this).fadeIn('fast');
+								}
+							});
+							
+
+						},
+						beforeAction:function(keyboard){
+							if(ClickCnt>0){
+								ClickCnt --;
+							}
+							
+							dataTitle.fadeOut('fast',function(){
+								$(this).empty();
+								dataInput.html("");
+								$(this).append("<P style='display: table-cell;  vertical-align: middle;'>"+inputData[ClickCnt].label+"</P>");
+								$(this).fadeIn('fast');
+							});
+						}
+					});
+					
+					area.append(dataTitle);
+					area.append(dataInput);
+					area.append(divKeyboard);
+					area.fadeIn();
+					
+				}
+			});
+			
+			
+			/*
+			imersiveLayout.createStatusBar();
+			imersiveLayout.createButton({
+				gradient:"gray", 
+				title:"Apontamento de CEP",
+				titleSize:20,
+				onMaximize:function(area,button){
+					$(area).append("TESTE");
+					$(area).dblclick(function(){button.trigger('close')});
+				}
+			});
+			
+			imersiveLayout.createButton({
+				gradient:"green", 
+				title:"Produção",
+				onMaximize:function(area,button){
+					$(area).append("TESTE2");
+					$(area).dblclick(function(){button.trigger('cancel');button.trigger('close')});
+				}
+			});*/
+			
+		});
+		</script>
+
+	</head>
+
+	<body>
+		<div id="chart">
+			<img src="images/chart.png" style='width:100%; height:auto'/>
+		</div>
+		<div id="buttons">
+		
+		</div>
+	</body>
+</html>
