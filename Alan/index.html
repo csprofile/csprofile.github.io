@@ -1,49 +1,105 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+        <link rel="stylesheet" type="text/css" href="./css/reset.css">
+        <title>Sintech App</title>
+    </head>
+    <body>
+        <div class="main-background">
+            <img src="images/bg.png" />
+        </div>
 
-<form id="formdoc" onsubmit="submitDoc()">
-  <label for="doccode">Doc. Code:</label>
-  <input type="text" id="doccode" name="doccode"><br><br>
-  <input type="submit" value="Submit">
-</form>
+        <main class="main-home">
+            <div class="main-block1">
+                <div class="sintech-logo">
+                    <p>S</p>
+                </div>
 
-<div id="imgcontainer">
+                <p class="code-text">
+                    Código do Documento
+                </p>
 
-</div>
+                <form id="formdoc" class="doc-form" onsubmit="submitDoc()">
+                    <input type="text" id="doccode" class="doc-code" name="doccode">
 
-<script>
-	document.getElementById('formdoc').addEventListener('submit', function(e) {
-		e.preventDefault();
-	});
+                    <div class="doc-fake-submit">
+                        <input type="submit" class="doc-submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
 
-	function submitDoc() {
-		var docs = {
-			"657531":"1.png",
-			"55555":"2.png"
-		}
-		var doc = document.getElementById("doccode").value;
-		var result = docs[doc];
-		
-		if (result) {
-			var elem = document.createElement("img");
-				elem.setAttribute("src", result);
-				elem.setAttribute("id", "docimage");
-				document.getElementById("imgcontainer").appendChild(elem);
-		} else {
-			var elem = document.querySelector( '#docimage' );
-			
-			if (elem){
-				elem.parentNode.removeChild( elem );
-			}
-				
-			alert("Esta merda nao existe");
-		}
-		
-		document.getElementById("doccode").value = '';
-		
-	}
-</script>
 
-</body>
+            <div id="imgcontainer" class="doc-answer">
+                <div class="doc-container">
+                    <div class="doc-text-placeholder">
+                        <p id="document-title" class="doc-title"></p>
+                        <p id="document-subtitle" class="doc-desc"></p>
+
+                        <p class="doc-opts">Baixar</p>
+                        <p class="doc-opts">Visualizar</p>
+                    </div>
+                    <img  class="doc-image" id="document-image">
+                </div>
+            </div>
+
+
+        </main>
+
+        <footer class="footer">
+            <p class="login">Login</p>
+            <p class="login">Criar conta</p>
+        </footer>
+
+        <script>
+            document.getElementById('formdoc').addEventListener('submit', function(e) {
+                e.preventDefault();
+            });
+
+            function submitDoc() {
+                const answerContainer = document.getElementById('imgcontainer');
+                answerContainer.classList.remove('active');
+
+                const docs = {
+                    "657531" : {
+                        image: "1.png",
+                        title: "Símbolo Estranho",
+                        subtitle: "Imagem encontrada por Ana."
+                    },
+                    "55555" : {
+                        image: "1.png",
+                        title: "Imagem em branco",
+                        subtitle: "Tem que ser imagem colorida amigo"
+                    }
+                }
+
+                // var docs = {
+                //     "657531":"1.png",
+                //     "55555":"2.png"
+                // }
+                var doc = document.getElementById("doccode").value;
+                var result = docs[doc];
+
+                if (result) {
+                    const docImg = document.getElementById('document-image');
+                    const docTitle = document.getElementById('document-title');
+                    const docSubTitle = document.getElementById('document-subtitle');
+
+                    docImg.setAttribute('src', result.image);
+                    docTitle.innerHTML = result.title;
+                    docSubTitle.innerHTML = result.subtitle;
+
+                    answerContainer.classList.add('active');
+                } else {
+                    alert("Esta merda nao existe");
+                }
+
+                document.getElementById("doccode").value = '';
+
+            }
+        </script>
+
+    </body>
 </html>
