@@ -2,9 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name=" theme-color" content="#1491f7">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="./css/main.css">
         <link rel="stylesheet" type="text/css" href="./css/reset.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+
         <title>Sintech App</title>
     </head>
     <body>
@@ -31,6 +34,9 @@
                 </form>
             </div>
 
+            <div id="modal1" class="modal">
+                <img class="doc-image-big" id="document-image-big">
+            </div>
 
             <div id="imgcontainer" class="doc-answer">
                 <div class="doc-container">
@@ -39,13 +45,14 @@
                         <p id="document-subtitle" class="doc-desc"></p>
 
                         <p class="doc-opts">Baixar</p>
-                        <p class="doc-opts">Visualizar</p>
+                        <a href="#modal1" rel="modal:open" class="doc-opts">Visualizar</a>
                     </div>
-                    <img  class="doc-image" id="document-image">
+
+                    <a href="#modal1" rel="modal:open">
+                        <img class="doc-image" id="document-image">
+                    </a>
                 </div>
             </div>
-
-
         </main>
 
         <footer class="footer">
@@ -69,25 +76,23 @@
                         subtitle: "Imagem encontrada por Ana."
                     },
                     "55555" : {
-                        image: "1.png",
+                        image: "2.png",
                         title: "Imagem em branco",
                         subtitle: "Tem que ser imagem colorida amigo"
                     }
                 }
 
-                // var docs = {
-                //     "657531":"1.png",
-                //     "55555":"2.png"
-                // }
                 var doc = document.getElementById("doccode").value;
                 var result = docs[doc];
 
                 if (result) {
                     const docImg = document.getElementById('document-image');
+                    const docImgBig = document.getElementById('document-image-big');
                     const docTitle = document.getElementById('document-title');
                     const docSubTitle = document.getElementById('document-subtitle');
 
                     docImg.setAttribute('src', result.image);
+                    docImgBig.setAttribute('src', result.image);
                     docTitle.innerHTML = result.title;
                     docSubTitle.innerHTML = result.subtitle;
 
@@ -102,4 +107,6 @@
         </script>
 
     </body>
+    <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </html>

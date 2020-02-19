@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap');
+
 .header {
     width: 100%;
     height: 80px;
@@ -67,14 +69,16 @@
     font-weight: bold;
     font-size: 52px;
     color: #000;
-    text-shadow: 1px 1px 2px red;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 .code-text {
     text-align: center;
     margin-top: 120px;
     color: #fff;
-    font-size: 35px;
+    font-size: 29px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .doc-form {
@@ -88,6 +92,7 @@
     text-indent: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .doc-submit {
@@ -99,11 +104,12 @@
     width: 110px;
     height: 40px;
     color: #fff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .footer {
     width: 100%;
-    height: 40px;
+    height: 50px;
     background: #fff;
     z-index: 5;
     position: fixed;
@@ -141,18 +147,24 @@
     margin-left: 4px;
     margin-top: 3px;
     color: #5A5A5A;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .doc-desc {
     font-size: 13px;
     margin-left: 4px;
     color: #AEAEAF;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .doc-image {
     max-width: 100px;
     float: right;
     max-height: 100%;
+}
+
+.doc-image-big {
+    max-width: 100%;
 }
 
 .doc-opts {
