@@ -51,8 +51,8 @@
         };
 
         window.ondevicemotion = function(event) {
-            let x = event.accelerationIncludingGravity.x * 5;
-            let y = event.accelerationIncludingGravity.y * 5;
+            let x = Math.round(event.accelerationIncludingGravity.x * 20)
+            let y = Math.round(event.accelerationIncludingGravity.y * 20)
 
             app.stage.filters.forEach(element => {
                 element.scale.x = (window.innerWidth / 2 - x) /20;
