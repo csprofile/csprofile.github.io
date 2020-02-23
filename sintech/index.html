@@ -51,15 +51,16 @@
         };
 
         window.ondevicemotion = function(event) {
-            let x = event.accelerationIncludingGravity.x;
-            let y = event.accelerationIncludingGravity.y;
+            let x = event.accelerationIncludingGravity.x * 5;
+            let y = event.accelerationIncludingGravity.y * 5;
+
+            alert('funcionou ', x);
 
             app.stage.filters.forEach(element => {
                 element.scale.x = (window.innerWidth / 2 - x) /20;
                 element.scale.y = (window.innerHeight / 2 - y) /20;
             });
         }
-
 
         function addToStage(image, adjustHeight = false){
             image.position.x = (ww - image.width) / 2;
