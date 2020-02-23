@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form id="formdoc" onsubmit="submitDoc()">
+  <label for="doccode">Doc. Code:</label>
+  <input type="text" id="doccode" name="doccode"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<div id="imgcontainer">
+
+</div>
+
+<script>
+	document.getElementById('formdoc').addEventListener('submit', function(e) {
+		e.preventDefault();
+	});
+
+	function submitDoc() {
+		var docs = {
+			"657531":"1.png"
+		}
+		var doc = document.getElementById("doccode").value;
+		var result = docs[doc];
+		
+		if (result) {
+			var elem = document.createElement("img");
+				elem.setAttribute("src", result);
+				elem.setAttribute("id", "docimage");
+				elem.setAttribute("height", "768");
+				elem.setAttribute("width", "1024");
+				elem.setAttribute("alt", "Flower");
+				document.getElementById("imgcontainer").appendChild(elem);
+		} else {
+			var elem = document.querySelector( '#docimage' );
+			
+			if (elem){
+				elem.parentNode.removeChild( elem );
+			}
+				
+			alert("Esta merda nao existe");
+		}
+		
+		document.getElementById("doccode").value = '';
+		
+	}
+</script>
+
+</body>
+</html>
