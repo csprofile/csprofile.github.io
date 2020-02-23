@@ -50,6 +50,16 @@
             });
         };
 
+        let accelerometer = new Accelerometer({frequency: 60});
+
+        accelerometer.addEventListener('reading', e => {
+            element.scale.x = (window.innerWidth / 2 - accelerometer.x) /20;
+            element.scale.y = (window.innerHeight / 2 - accelerometer.y) /20;
+            console.log("Acceleration along the X-axis " + accelerometer.x);
+            console.log("Acceleration along the Y-axis " + accelerometer.y);
+        });
+        accelerometer.start();
+
         function addToStage(image, adjustHeight = false){
             image.position.x = (ww - image.width) / 2;
             (adjustHeight) ? image.position.y = adjustHeight : '';
