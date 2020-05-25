@@ -15,7 +15,8 @@ function drawChart1(){
 			spacingBottom: 0,
 			spacingLeft: 0,
 			spacingRight: 0,
-			backgroundColor:"#eee"
+			backgroundColor:"transparent",
+			gridLineColor:"#111",
 		},
 		plotOptions: {
 			series: {
@@ -26,8 +27,18 @@ function drawChart1(){
 				size:"100%"
 			}
 		},
-		title: {text: 'PROFESSIONAL AND SKILLS'},
-		subtitle: {text: 'Strive not to be a success, but rather to be of value. "Albert Einstein"'},
+		title: {
+			text: 'PROFESSIONAL AND SKILLS',
+			style: {
+				color: '#ddd'
+			}
+		},
+		subtitle: {
+			text: 'Strive not to be a success, but rather to be of value. "Albert Einstein"',
+			style: {
+				color: '#ddd'
+			}
+		},
 		legend: {
 			align: 'center',
 			verticalAlign: 'bottom',
@@ -35,7 +46,7 @@ function drawChart1(){
 			enabled:true,
 			itemStyle: {
 				fontSize:'10px',
-				color: '#555'
+				color: '#ddd'
 			},
 			itemHoverStyle: {
 				color: '#999'
@@ -49,7 +60,8 @@ function drawChart1(){
 			labels: {enabled: false},
 			title: {text: null},
 			endOnTick: false,
-			maxPadding: 0
+			maxPadding: 0,
+			gridLineColor:"#111"
 		},
 		pane: {
 			size: '50%'
@@ -69,28 +81,29 @@ function drawChart1(){
 				'English',
 				'DBA'
 			],
-			labels: {enabled: true, distance:5},
-			crosshair: true
+			labels: {enabled: true, distance:5, style:{color:'#acb700'}},
+			crosshair: true,
+			gridLineColor:"#111"
 		},
 		series: [
 			{
 				name: 'EXPERT',
-				color: '#90ED7D',
+				color: '#22734a',
 				data: [1,0,0,0,1,1,0,0,0,0,0,0],
 				legendIndex:3
 			},{
 				name: 'ADVANCED',
-				color: '#7CB5EC',
+				color: '#22734a',
 				data: [1,1,0,1,1,1,1,1,0,0,1,1],
 				legendIndex:2
 			},{
 				name: 'INTERMEDIATE',
-				color: '#8085E9',
+				color: '#22734a',
 				data: [1,1,0,1,1,1,1,1,0,1,1,1],
 				legendIndex:1
 			},{
 				name: 'BEGGINER',
-				color: '#E4D354',
+				color: '#22734a',
 				data: [1,1,1,1,1,1,1,1,1,1,1,1],
 				legendIndex:0
 			},{
@@ -104,11 +117,11 @@ function drawChart1(){
 				innerSize: '90%',
 				size:'85%',
 				data: [
-					{fullName:'Numericon <br/> 2007 to 2010',  url:'', name:"Numericon", y:3, color:"#90ED7D", description:"<b>Numericon Manufacturing Systems</b><br/>2007 to 2010<br/>-Technical Support<br/>- Application Support<br/>- Database development"}
-					,{fullName:'NC Systems <br/> 2011 to 2014', url:'http://ncsystems.com.br/', name:"NC", y:3, color:"#E4D354", description:"<b>NCSystems Production Management Systems</b><br/>2011 to 2014<br/>- Multiplatform systems development<br/>- Web development<br/>- DBA<br/>- Experience as team leader"}
-					,{fullName:'Q3 Systems <br/> 2014 to 2016', url:'http://q3sistemas.com.br/', name:"Q3", y:2, color:"#8085E9", description:"<b>Q3 Performance Solutions</b><br/>2014 to 2016<br/>- Project management<br/>- Web development<br/>- System analysis"}
-					,{fullName:'CWI Software <br/> 2015 to 2016', url:'http://www.cwi.com.br/Main/Index', name:"CWI", y:1, color:"#F7A35C", description:"<b>CWI Software</b><br/>2015 to 2016<br/>- T-SQL development<br/>- Reporting services development<br/>- DataBase analysis"}
-					,{fullName:'QI Technical Schools <br/> 2015 to 2016', url:'http://qi.com.br/', name:'QI', y:1, color:'#7CB5EC', description:'<b>QI Technical Schools</b><br/>2015 to 2016<br/>Teacher of:<br/>- Programming logic<br/>- Web development I<br/>- Web development  II<br/>- Web development  III<br/>- DataBase I<br/>- DataBase II<br/>- DataBase III<br/>- Human relationships in organizations<br/>- Visual programming language'}
+					{fullName:'Numericon <br/> 2007 to 2010',  url:'', name:"Numericon", y:3, color:"#224c73", description:"<b>Numericon Manufacturing Systems</b><br/>2007 to 2010<br/>-Technical Support<br/>- Application Support<br/>- Database development"}
+					,{fullName:'NC Systems <br/> 2011 to 2014', url:'http://ncsystems.com.br/', name:"NC", y:3, color:"#227372", description:"<b>NCSystems Production Management Systems</b><br/>2011 to 2014<br/>- Multiplatform systems development<br/>- Web development<br/>- DBA<br/>- Experience as team leader"}
+					,{fullName:'Q3 Systems <br/> 2014 to 2016', url:'http://q3sistemas.com.br/', name:"Q3", y:2, color:"#2e9a99", description:"<b>Q3 Performance Solutions</b><br/>2014 to 2016<br/>- Project management<br/>- Web development<br/>- System analysis"}
+					,{fullName:'CWI Software <br/> 2015 to 2016', url:'http://www.cwi.com.br/Main/Index', name:"CWI", y:1, color:"#173550", description:"<b>CWI Software</b><br/>2015 to 2016<br/>- T-SQL development<br/>- Reporting services development<br/>- DataBase analysis"}
+					,{fullName:'QI Technical Schools <br/> 2015 to 2016', url:'http://qi.com.br/', name:'QI', y:1, color:'#385d81', description:'<b>QI Technical Schools</b><br/>2015 to 2016<br/>Teacher of:<br/>- Programming logic<br/>- Web development I<br/>- Web development  II<br/>- Web development  III<br/>- DataBase I<br/>- DataBase II<br/>- DataBase III<br/>- Human relationships in organizations<br/>- Visual programming language'}
 				],
 					
 				point: {
@@ -121,6 +134,7 @@ function drawChart1(){
 					}
 				},
 				dataLabels: {
+					style:{color:'#ddd'},
 					enabled: true,
 					distance:chartParamRender.datalabelDistance,
 					formatter: function ()  {
