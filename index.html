@@ -1,197 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="theme-color" content="#000" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta prefix="og: http://ogp.me/ns#" property="og:title" content="CS(Developer)"/>
-		<meta prefix="og: http://ogp.me/ns#" property="og:description" content="A short description illustrated by charts, about a System Developer...">
-		<meta prefix="og: http://ogp.me/ns#" property="og:image" content="http://csprofile.github.io/img/ogImage.png" />
-		<meta prefix="og: http://ogp.me/ns#" property="og:url" content="http://csprofile.github.io/" />
-
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		
-		<title>CS(Developer)</title>
-		
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/scrolling.css" rel="stylesheet">
-		<link href="css/bootstrap.adapt.css" rel="stylesheet">
-		
-		<link href="css/style.css" rel="stylesheet">
-		
-		<script src="js/thirdParty/jquery.js"></script>
-		<script src="js/thirdParty/bootstrap.min.js"></script>
-		
-		<script src="js/thirdParty/highcharts.js"></script>
-		<script src="js/thirdParty/highcharts-more.js"></script>
-		
-		<script src="js/thirdParty/jquery.easing.min.js"></script>
-		<script src="js/scrolling.js"></script>
-		
-		<script src="js/consoleAnim.js"></script>
-		<script src="js/util.js"></script>
-		<script src="js/chartProfessional.js"></script>
-		<script src="js/chartAcademic.js"></script>
-		<script src="js/contactSubmit.js"></script>
-		<script src="js/start.js"></script>
-
-		<!-- Support to IE 9 -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-77928029-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
-
+		<title> This page is so cool </title>
+		<style>
+			html, body {
+				height: 100%;
+				background: #2F2F31;
+				color: #fff;
+				overflow: hidden;
+			}
+			.main {
+				height: 100%;
+				width: 100%;
+				display: table;
+			}
+			.wrapper {
+				display: table-cell;
+				height: 100%;
+				text-align:center;
+				vertical-align: middle;
+				font-size: 20pt;
+				wrap
+			}
+			a{
+				text-decoration: none;
+				color: #fff;
+			}
+			
+			#duck{
+				visibility:hidden;
+			}
+			
+			#duck-trigger:hover{
+				cursor: pointer;
+			}
+		</style>
 	</head>
-
-	<body data-spy="scroll" data-target=".navbar-fixed-top">
-
-		<!-- Navigations -->
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container">
-				
-				<div class="navbar-header page-scroll">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a href="#Sec0" id="homeIcon" title="Home, sweet home!" class="page-scroll" alt="Home, sweet home!">CS(Developer)</a>
-				</div>
-
-				<div class="navbar-collapse navbar-ex1-collapse collapse" aria-expanded="false" style="height: 1px;">
-					<ul class="nav navbar-nav">
-						<li class="">
-							<a class="page-scroll" href="#Sec1">Professional</a>
-						</li>
-						<li class="">
-							<a class="page-scroll" href="#Sec2">Achievements and Academic</a>
-						</li>
-						<li class="">
-							<a class="page-scroll" href="#Sec3">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-		<!-- Sections -->
-		<section id="Sec0" class="sectionFixHeight">
-			<div class='container'>
-				<div class='row Sec0-Title'>
-					<div class='col-lg-4'><p>CRISTIAN SILVA</p></div>
-					<div class='col-lg-4'><p class='yellowTitle'>(DEVELOPER)</p></div>
-				</div>
-				<div class='row Sec0-Bio'>
-					<div class='col-lg-4'>
-						<p class='yellowTitle'>Javascript developer</p>
-						<p class='yellowTitle'>Database engineer</p>
-						<p class='yellowTitle'>Game lover</p>
-						<p class='yellowTitle'>Bass player</p>
-						<p class='yellowTitle'>Series fan</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		
-		<section id="Sec1" class="sectionFixHeight">
-			<div class="chartCols" id="chartContainer1"></div>
-		</section>
-		
-
-		<section id="Sec2" class="sectionFixHeight">
-			<div class="chartCols" id="chartContainer2"></div>
-		</section>
-		
-
-		<section id="Sec3" class="sectionFixHeight">
-			<h1 id='highchartsTitle' class'mainFont'>CONTACT</h1>
-			<p id='highchartsSubTitle' class='mainFont'>I'm very happy you are here. Please, leave me a message and be part of my network!</p>
-			<div class='alertDialog'>
-				<div class="alert alert-success" style="display: none"><strong><span class="glyphicon glyphicon-send"></span> Success! Message sent.</strong></div>	  
-				<div class="alert alert-danger" style="display: none"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please, send me direct e-mail.</strong></div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<form role="form" action="https://formspree.io/your@email.com" method="post" id="contactForm"> 
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label for="_subject">Your Name</label>
-								<div class="input-group">
-								<input type="text" class="form-control" name="_subject" id="InputName" placeholder="Enter Name" required>
-								<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
-							</div>
-							<div class="form-group">
-								<label for="_replyto">Your Email</label>
-								<div class="input-group">
-								<input type="email" class="form-control" id="InputEmail" name="_replyto" placeholder="Enter Email" required>
-								<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
-							</div>
-							<div class="form-group">
-								<label for="InputMessage">Message</label>
-								<div class="input-group">
-									<textarea name="InputMessage" id="InputMessage" class="form-control" rows="2" required></textarea>
-									<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
-								</div>
-							</div>
-							<div class="form-group">
-								<label id='calc' for="InputReal">What is 4+3?</label>
-								<div class="input-group">
-									<input type="text" class="form-control" name="InputReal" id="InputReal" required>
-									<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
-								</div>
-							</div>
-							<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-submit pull-right">
-						</div>
-					</form>
-					
-					<hr class="featurette-divider hidden-lg">
-					<div class="col-lg-5 col-md-push-1">
-						<address>
-							
-							<p class="lead">
-								E-Mail:<a href='mailto:wd.cristian@gmail.com'> wd.cristian@gmail.com</a>
-								<br/>
-								Skype: wd.cristian
-								<br/>
-								<br/>
-								<a href='http://www.linkedin.com/in/csdeveloper' target='_blank'><img class='social' alt='LinkedIn' title='LinkedIn' src='img/socialLn.png'/></a>
-								<a href='http://www.facebook.com/wd.cristian' target='_blank'><img class='social' alt='Facebook' title='Facebook' src='img/socialFacebook.png'/></a>
-								<a href='http://github.com/csprofile' target='_blank'><img class='social' alt='Github' title='Github' src='img/socialGithub.png'/></a>
-								<a href='download/Cristian_Silva_EN.pdf' target='_blank' download><img class='social' alt='Download PDF formal resume' title='Download PDF formal Resume' src='img/pdfDownload.png'/></a>
-							</p>
-						</address>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-
-		<!-- Modal -->
-		<div class="modal fade" id="mobileRotation" role="dialog">
-			<div class="modal-dialog">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-body">
-						<img src='img/mobileScreenRotation.gif' style='height:180px; width:auto;'/>
-					</div>
-				</div>
+	<body>
+		<div class = "main">
+			<div class = "wrapper">
+				<p> Imagine a cool page here. </p>
+				<p> This website is a tool for you to exercise your imagination! </p>
+				<p> When you finish your exercise, you can visit: 
+					<a href="https://www.linkedin.com/in/csdeveloper/" target="_blank">my LinkedIn</a>,
+					<a href="https://github.com/csprofile" target="_blank">my Github</a> or
+					<a href="download/Cristian_Silva_EN.pdf" target="_blank">download my resume</a>
+				</p>
+				<p> Thanks for visiting ☺ <span id="duck-trigger" onclick="showDuck()">Click here to see a duck. </span></p>
+				<img id="duck" src="img/duck.gif">
 			</div>
 		</div>
-		
+	  
+		<script>
+			function showDuck(){
+				document.getElementById("duck").style.visibility = "visible";
+			}
+		</script>
 	</body>
 </html>
