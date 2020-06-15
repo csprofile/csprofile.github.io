@@ -31,7 +31,7 @@ function STOPIT(){
 	stopIt();
 }
 
-$(function () {
+(function () {
 	var anim = [];
 	var Ctrl = 0;
 	
@@ -339,4 +339,4 @@ $(function () {
 		console.log("To stop, type stopIt() bellow and press enter :)");
 	},400);
 	
-});
+})();
