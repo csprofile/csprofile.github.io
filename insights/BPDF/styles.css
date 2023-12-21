@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#pdfContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: red;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 20px; /* Adjust the size as needed */
+  height: 20px; /* Adjust the size as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle:hover {
+  background-color: #ff7373;
+  color: white;
+}
