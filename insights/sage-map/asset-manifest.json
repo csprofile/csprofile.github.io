@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "./static/css/main.5d5db0a5.css",
+    "main.js": "./static/js/main.efa8e67a.js",
+    "static/media/2.mp4": "./static/media/2.af0e86ddf4034c36ad28.mp4",
+    "static/media/pano3.png": "./static/media/pano3.0adba4a37626ae99395f.png",
+    "static/media/pano4.png": "./static/media/pano4.f0ec23844555dd0bf9aa.png",
+    "static/media/pano5.png": "./static/media/pano5.6e0256ee422a8ec8e918.png",
+    "static/media/3.png": "./static/media/3.fcd3d15e660ae2dfe0ac.png",
+    "static/media/pano2.png": "./static/media/pano2.8816b35d58b16465ef87.png",
+    "static/media/2.png": "./static/media/2.1fac1f367cd0fd3907ee.png",
+    "static/media/1.png": "./static/media/1.8cccf284619cdf90c9db.png",
+    "static/media/transit.jpg": "./static/media/transit.f6fb20791d75f1d8f9c8.jpg",
+    "static/media/terrain.jpg": "./static/media/terrain.733c312d05a2f170cda6.jpg",
+    "static/media/map.jpg": "./static/media/map.2f0ead689a24e1c1f9ba.jpg",
+    "static/media/bugRotate.png": "./static/media/bugRotate.25ce5afbc751be7db0ab.png",
+    "index.html": "./index.html"
+  },
+  "entrypoints": [
+    "static/css/main.5d5db0a5.css",
+    "static/js/main.efa8e67a.js"
+  ]
+}
